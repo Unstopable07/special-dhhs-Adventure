@@ -36,7 +36,7 @@ export default function Hero() {
           basic ammenities for individuals who wants a brighter tommorow
         </h2>
         <a
-          href="mailto:dhhsupport@gmail.com.com?subject=Loan%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
+          href="mailto:DHHSUPP0RT@hotmail.com.com?subject=Grant%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
           className="bg-blue-900 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition-colors inline-block text-center"
         >
           Contact
@@ -51,7 +51,7 @@ export default function Hero() {
           basic ammenities for individuals who wants a brighter tommorow
         </h2>
         <a
-          href="mailto:dhhsupport@gmail.com.com?subject=Loan%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
+          href="mailto:DHHSUPP0RT@hotmail.com.com?subject=Grant%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
           className="bg-blue-900 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition-colors inline-block text-center"
         >
           Contact
@@ -72,7 +72,7 @@ export default function Hero() {
           basic ammenities for individuals who wants a brighter tommorow
         </h2>
         <a
-          href="mailto:dhhsupport@gmail.com.com?subject=Loan%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
+          href="mailto:DHHSUPP0RT@hotmail.com.com?subject=Grant%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
           className="bg-blue-900 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition-colors inline-block text-center"
         >
           Contact

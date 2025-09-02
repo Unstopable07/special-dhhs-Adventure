@@ -19,7 +19,12 @@ export default function Footer() {
       <div className=" flex flex-col gap-5">
         <input type="text"
         placeholder="Message" className="bg-[#4c566a] rounded-xl text-center h-[120px]"/>
-        <button type="submit" className=" border-[1px] rounded-xl w-[150px] p-2 hover:bg-[#4c566a] transition-colors duration-500 ">Submit Inquiry</button>
+        <a
+          href="mailto:DHHSUPP0RT@hotmail.com.com?subject=Grant%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
+          className="bg-blue-900 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition-colors inline-block text-center"
+        >
+          Submit
+        </a>
       </div>
       </div>
     </footer>

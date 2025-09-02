@@ -96,7 +96,7 @@ export default function Navbar() {
                 className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
               <a
-                href="mailto:DHHSUPP0RT@hotmail.com.com?subject=Loan%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
+                href="mailto:DHHSUPP0RT@hotmail.com?subject=Loan%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
                 className="bg-blue-900 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition-colors inline-block text-center"
               >
                 Send Message

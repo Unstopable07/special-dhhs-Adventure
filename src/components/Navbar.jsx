@@ -1,13 +1,52 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false); // To show success message
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    emailjs
+      .send(
+        "service_lzbf5qd", // Your EmailJS Service ID
+        "template_ptrqkvt", // Your EmailJS Template ID
+        formData, // Form data containing name, email, message
+        "dWWiwE_tq20guofrb" // Your EmailJS User ID
+      )
+      .then(
+        (response) => {
+          console.log("Success:", response);
+          setIsLoading(false);
+          setIsSuccess(true);
+          setFormData({ name: "", email: "", message: "", Address: "" }); // Reset form
+        },
+        (error) => {
+          console.log("Error:", error);
+          setIsLoading(false);
+          setIsSuccess(false);
+        }
+      );
+  };
 
   return (
     <>
@@ -79,28 +118,61 @@ export default function Navbar() {
             <h2 className="text-xl font-bold text-blue-900 mb-4">
               Speak to an Agent
             </h2>
-            <form className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <input
                 type="text"
                 placeholder="Your Name"
                 className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
               />
+              <input type="Number" 
+              placeholder="Phone Number"
+                className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                name="Number"
+                value={formData.Number}
+                onChange={handleChange}
+                required
+              />
+              <textarea
+                placeholder="Your Address"
+                rows="2"
+                className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                name="Address"
+                value={formData.Address}
+                onChange={handleChange}
+                required
+              ></textarea>
               <input
                 type="email"
                 placeholder="Your Email"
                 className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
               />
               <textarea
                 placeholder="Your Message"
                 rows="3"
                 className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
               ></textarea>
-              <a
-                href="mailto:DHHSUPP0RT@hotmail.com?subject=Loan%20Inquiry&body=Hello%20DHHS%2C%20I%20need%20assistance%20with..."
+              <button
+                type="submit"
                 className="bg-blue-900 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition-colors inline-block text-center"
+                disabled={isLoading}
               >
-                Send Message
-              </a>
+                {isLoading ? "Sending..." : "Send Message"}
+              </button>
+              {isSuccess && !isLoading && (
+                <div className="mt-2 text-green-500">Message sent successfully!</div>
+              )}
             </form>
           </div>
         </div>
